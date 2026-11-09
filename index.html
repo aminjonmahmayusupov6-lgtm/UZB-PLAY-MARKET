@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050811">
+  <meta name="description" content="UZB-PLAY-MARKET — bepul ilovalar va o‘yinlar bozori.">
+  <title>UZB-PLAY-MARKET — Bepul ilovalar marketi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">U</span><span>UZB<span class="cyan">-PLAY</span><small>COMMUNITY APP MARKET</small></span></a>
+    <nav><a href="#market">Market</a><a href="#categories">Kategoriyalar</a><a href="#about">Biz haqimizda</a></nav>
+    <div class="top-actions"><button class="btn btn-ghost" id="loginBtn">Kirish</button><button class="btn btn-primary" id="uploadTop">＋ Ilova joylash</button><button class="menu-btn" id="menuBtn" aria-label="Menyu">☰</button></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy"><div class="eyebrow"><span class="pulse"></span> O‘ZBEKISTONNING OCHIQ MARKETI</div>
+        <h1>ILOVANGNI<br><span class="gradient-text">JOYLA.</span><br>HAMMA BILAN BO‘LISH.</h1>
+        <p>Sevimli ilovalaringni top, bepul yuklab ol yoki o‘zing yaratgan loyihani butun jamoaga taqdim et.</p>
+        <div class="hero-actions"><a class="btn btn-primary btn-large" href="#market">Marketni ko‘r <span>↗</span></a><button class="btn btn-outline btn-large" id="heroUpload">＋ Ilova joylash</button></div>
+        <div class="hero-note"><span>✦</span> Bepul. Ochiq. Hamjamiyat uchun.</div>
+      </div>
+      <div class="hero-art"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="core"><div class="core-icon">U<span>+</span></div><div class="core-label">PLAY MARKET</div></div><div class="float-chip chip-one">✦ FREE APPS</div><div class="float-chip chip-two">⚡ COMMUNITY</div><div class="float-chip chip-three">⬡ UZB</div></div>
+    </section>
+    <section class="stats"><div><strong>100%</strong><span>BEPUL PLATFORMА</span></div><div><strong>∞</strong><span>HAMMA UCHUN OCHIQ</span></div><div><strong>UZB</strong><span>MAHALLIY JAMOA</span></div></section>
+    <section class="market-section" id="market">
+      <div class="section-heading"><div><div class="eyebrow">KASHF ET</div><h2>MARKET <span class="cyan">VITRINASI</span></h2><p>Yangi loyihalar va foydali ilovalar bir joyda.</p></div><div class="search-wrap"><span>⌕</span><input id="searchInput" type="search" placeholder="Ilova qidirish..."></div></div>
+      <div class="filters" id="categories"><button class="filter active" data-category="Barchasi">Barchasi</button><button class="filter" data-category="O‘yinlar">🎮 O‘yinlar</button><button class="filter" data-category="AI va texnologiya">✦ AI va texnologiya</button><button class="filter" data-category="Ta’lim">📚 Ta’lim</button><button class="filter" data-category="Foydali">⚙ Foydali</button></div>
+      <div class="app-grid" id="appGrid">
+        <article class="app-card"><div class="app-icon icon-blue">AI</div><div class="app-info"><span class="tag">AI VA TEXNOLOGIYA</span><h3>AI BEK</h3><p>Sun’iy intellekt yordamchisi</p><div class="card-bottom"><span>✦ Namuna ilova</span><button class="card-open" data-name="AI BEK" data-desc="Sun’iy intellekt yordamchisi. Bu vitrina namunasi." data-link="">Ko‘rish ↗</button></div></div></article>
+        <article class="app-card"><div class="app-icon icon-purple">🎮</div><div class="app-info"><span class="tag purple-tag">O‘YINLAR</span><h3>PLAY ZONE</h3><p>O‘yinlar uchun jamlanma</p><div class="card-bottom"><span>✦ Namuna ilova</span><button class="card-open" data-name="PLAY ZONE" data-desc="O‘yinlar uchun jamlanma. Bu vitrina namunasi." data-link="">Ko‘rish ↗</button></div></div></article>
+        <article class="app-card"><div class="app-icon icon-green">UZ</div><div class="app-info"><span class="tag green-tag">TA’LIM</span><h3>UZ LEARN</h3><p>O‘rganish uchun platforma</p><div class="card-bottom"><span>✦ Namuna ilova</span><button class="card-open" data-name="UZ LEARN" data-desc="O‘rganish uchun platforma. Bu vitrina namunasi." data-link="">Ko‘rish ↗</button></div></div></article>
+      </div>
+      <div class="empty-state" id="emptyState" hidden>Bu qidiruv bo‘yicha ilova topilmadi.</div>
+      <p class="demo-note">Ko‘rsatilgan kartalar hozircha dizayn namunasi. Haqiqiy ilovalar moderatsiya va server qismi ulangandan keyin chiqadi.</p>
+    </section>
+    <section class="upload-banner"><div><div class="eyebrow">IJODINGNI ULASH</div><h2>SENING ILOVANG — <span class="cyan">SENING MAYDONING.</span></h2><p>Loyihangni hamjamiyatga tanit. Joylash bepul.</p></div><button class="btn btn-primary btn-large" id="bannerUpload">Ilova joylash <span>↗</span></button></section>
+    <section class="about" id="about"><div class="eyebrow">BIZNING MAQSAD</div><h2>YARATUVCHILAR UCHUN <span class="gradient-text">OCHIQ MAYDON.</span></h2><p>UZB-PLAY-MARKET — ishlab chiquvchilar o‘z ilovalarini taqdim etishi, foydalanuvchilar esa ularni topishi mumkin bo‘lgan bepul platforma g‘oyasi.</p></section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-mark">U</span><span>UZB<span class="cyan">-PLAY</span><small>COMMUNITY APP MARKET</small></span></a><span>© 2026 UZB-PLAY-MARKET · Barcha huquqlar saqlangan.</span></footer>
+  <div class="modal-backdrop" id="uploadModal" hidden><section class="modal"><button class="modal-close" data-close aria-label="Yopish">×</button><div class="eyebrow">HAMJAMIYATGA QO‘SHIL</div><h2>ILOVA <span class="cyan">JOYLASH</span></h2><p class="modal-intro">Hozircha bu forma namuna rejimida ishlaydi. Ma’lumotlar serverga yuborilmaydi.</p><form id="uploadForm"><label>Ilova nomi<input name="appName" required maxlength="45" placeholder="Masalan: Mening ilovam"></label><label>Kategoriya<select name="category"><option>O‘yinlar</option><option>AI va texnologiya</option><option>Ta’lim</option><option>Foydali</option></select></label><label>Qisqa tavsif<textarea name="description" required maxlength="180" placeholder="Ilovangiz nima qiladi?"></textarea></label><label>Yuklab olish havolasi<input name="link" type="url" placeholder="https://..."></label><button class="btn btn-primary submit-btn" type="submit">Namuna kartasini ko‘rsatish ↗</button></form><div class="form-message" id="formMessage" role="status"></div></section></div>
+  <div class="modal-backdrop" id="loginModal" hidden><section class="modal small-modal"><button class="modal-close" data-close>×</button><div class="eyebrow">XUSH KELIBSIZ</div><h2>AKKAUNTGA <span class="cyan">KIRISH</span></h2><p>Google orqali kirish funksiyasi OAuth sozlamalari va serverga ulangandan keyin ishlaydi.</p><button class="btn btn-outline submit-btn" id="googleInfo">Google bilan kirish — tez orada</button><div class="form-message" id="loginMessage"></div></section></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body></html>
