@@ -1,0 +1,19 @@
+const $=s=>document.querySelector(s);const $$=s=>document.querySelectorAll(s);
+const uploadModal=$("#uploadModal"),loginModal=$("#loginModal"),toast=$("#toast");
+function showToast(message){toast.textContent=message;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),2600)}
+function openModal(modal){modal.hidden=false;document.body.style.overflow="hidden"}
+function closeModals(){uploadModal.hidden=true;loginModal.hidden=true;document.body.style.overflow=""}
+["#uploadTop","#heroUpload","#bannerUpload"].forEach(id=>$(id).addEventListener("click",()=>openModal(uploadModal)));
+$("#loginBtn").addEventListener("click",()=>openModal(loginModal));
+$$("[data-close]").forEach(b=>b.addEventListener("click",closeModals));
+[uploadModal,loginModal].forEach(m=>m.addEventListener("click",e=>{if(e.target===m)closeModals()}));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModals()});
+$("#googleInfo").addEventListener("click",()=>$("#loginMessage").textContent="Google OAuth hali ulanmagan. Keyingi bosqichda Firebase yoki boshqa autentifikatsiya xizmati sozlanadi.");
+$("#menuBtn").addEventListener("click",()=>document.querySelector("nav").classList.toggle("open"));
+let activeCategory="Barchasi";
+function filterCards(){const q=$("#searchInput").value.toLocaleLowerCase("uz");let visible=0;$$(".app-card").forEach(card=>{const text=card.innerText.toLocaleLowerCase("uz");const category=card.dataset.category||"Namuna";const ok=(activeCategory==="Barchasi"||category===activeCategory)&&text.includes(q);card.hidden=!ok;if(ok)visible++});$("#emptyState").hidden=visible!==0}
+$$(".filter").forEach(btn=>btn.addEventListener("click",()=>{$$(".filter").forEach(b=>b.classList.remove("active"));btn.classList.add("active");activeCategory=btn.dataset.category;filterCards()}));
+$("#searchInput").addEventListener("input",filterCards);
+function addCard(name,category,description,link){const card=document.createElement("article");card.className="app-card";card.dataset.category=category;const icon=document.createElement("div");icon.className="app-icon icon-blue";icon.textContent=name.slice(0,2).toUpperCase();const info=document.createElement("div");info.className="app-info";const tag=document.createElement("span");tag.className="tag";tag.textContent=category.toUpperCase();const h=document.createElement("h3");h.textContent=name;const p=document.createElement("p");p.textContent=description;const bottom=document.createElement("div");bottom.className="card-bottom";const note=document.createElement("span");note.textContent="✦ Yangi namuna";const action=document.createElement("button");action.className="card-open";action.textContent="Ko‘rish ↗";action.addEventListener("click",()=>{if(link){window.open(link,"_blank","noopener");}else showToast("Hozircha yuklab olish havolasi qo‘shilmagan.")});bottom.append(note,action);info.append(tag,h,p,bottom);card.append(icon,info);$("#appGrid").prepend(card);filterCards()}
+$("#uploadForm").addEventListener("submit",e=>{e.preventDefault();const data=new FormData(e.currentTarget);const name=String(data.get("appName")).trim(),category=String(data.get("category")),description=String(data.get("description")).trim(),link=String(data.get("link")).trim();if(link&&!/^https?:\/\//i.test(link)){showToast("Havola https:// bilan boshlanishi kerak.");return}addCard(name,category,description,link);$("#formMessage").textContent="Namuna kartasi vitringa qo‘shildi. Hozircha bu faqat ushbu brauzer oynasida ko‘rinadi; serverga saqlanmadi.";e.currentTarget.reset();showToast("Namuna karta qo‘shildi!");setTimeout(closeModals,1600)});
+$$(".card-open").forEach(btn=>btn.addEventListener("click",()=>{if(btn.dataset.link){window.open(btn.dataset.link,"_blank","noopener")}else showToast(btn.dataset.name+" — "+btn.dataset.desc)}));
